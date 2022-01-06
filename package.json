@@ -1,5 +1,5 @@
 {
-  "name": "insta-dm-webhook-backend",
+  "name": "esp8266-nodemcu-backend",
   "version": "1.0.0",
   "description": "",
   "main": "server.js",
