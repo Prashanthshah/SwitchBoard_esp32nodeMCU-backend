@@ -5,7 +5,7 @@ const http = require('http');
 const socketIO = require('socket.io');
 
 const cors = require('cors');
-const instaWebHooks = require('./routes/webhooks.route');
+const routes = require('./routes/webhooks.route');
 
 const app = express();
 
@@ -19,7 +19,7 @@ app.get('/', (req, res, next) => {
   res.send('Server is running');
 });
 
-app.use('/webhooks', instaWebHooks);
+app.use('/webhooks', routes);
 
 const server = http.createServer(app);
 
