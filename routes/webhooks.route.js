@@ -6,20 +6,15 @@ const router = express.Router();
 const server = require('../server');
 
 router.get('/', (req, res) => {
-  console.log("webhook hit");
-  // try {
-    //
-  //   if (req.query['hub.verify_token'] === 'instadmtesttoken') {
-  //     res.status(200);
-  //     res.send(response);
-  //   } else {
-  //     res.status(401);
-  //     res.json({ staus: 'token_not_verified' });
-  //   }
-  // } catch (error) {
-  //   res.status(400);
-  //   res.json({ message: error.message });
-  // }
+  console.log("webhook hit!!");
+  try {
+    
+   res.status(200);
+   res.json({message: 'success'})
+  } catch (error) {
+    res.status(400);
+    res.json({ message: error.message });
+  }
 });
 
 
