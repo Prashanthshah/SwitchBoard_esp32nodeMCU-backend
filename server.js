@@ -25,19 +25,18 @@ const server = http.createServer(app);
 
 //socket.io integration
 
-const io = socketIO(server);
+// const io = socketIO(server);
 
 
+// io.on('connection', (socket) => {
+//   console.log('New client connected');
+//   socket.emit('connection', null);
+// });
 
-io.on('connection', (socket) => {
-  console.log('New client connected');
-  socket.emit('connection', null);
-});
-
-const PORT = process.env.PORT || 5000;
+const PORT = process.env.PORT || 8000;
 
 server.listen(PORT, console.log(`Server is running on port ${PORT}`));
 
-module.exports.getIO = function(){
-    return io;
-}
+// module.exports.getIO = function(){
+//     return io;
+// }
