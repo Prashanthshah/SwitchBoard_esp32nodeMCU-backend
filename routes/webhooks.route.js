@@ -13,8 +13,8 @@ router.get("/", (req, res) => {
   try {
     res.status(200);
     res.json({
-      message: "success",
-      switches: { switch1, switch2, switch3, switch4 },
+    
+      switch1, switch2, switch3, switch4 
     });
   } catch (error) {
     res.status(400);
