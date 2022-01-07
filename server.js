@@ -1,11 +1,10 @@
-const dotenv = require('dotenv');
-const express = require('express');
+const dotenv = require("dotenv");
+const express = require("express");
 
-const http = require('http');
-const socketIO = require('socket.io');
+const http = require("http");
 
-const cors = require('cors');
-const routes = require('./routes/webhooks.route');
+const cors = require("cors");
+const routes = require("./routes/webhooks.route");
 
 const app = express();
 
@@ -15,28 +14,14 @@ app.use(cors());
 
 app.use(express.json());
 
-app.get('/', (req, res, next) => {
-  res.send('Server is running');
+app.get("/", (req, res, next) => {
+  res.send("Server is running");
 });
 
-app.use('/webhooks', routes);
+app.use("/webhooks", routes);
 
 const server = http.createServer(app);
-
-//socket.io integration
-
-// const io = socketIO(server);
-
-
-// io.on('connection', (socket) => {
-//   console.log('New client connected');
-//   socket.emit('connection', null);
-// });
 
 const PORT = process.env.PORT || 8000;
 
 server.listen(PORT, console.log(`Server is running on port ${PORT}`));
-
-// module.exports.getIO = function(){
-//     return io;
-// }
